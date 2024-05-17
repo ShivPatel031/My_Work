@@ -1,0 +1,65 @@
+#screen{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#traficlight{
+    width: 200px;
+    height: 600px;
+    background-color: rgb(60, 57, 57);
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    
+}
+
+#redlight{
+    width:150px;
+    height:150px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#redlight:hover{
+    background-color: red;
+}
+
+#redlight:active{
+    background-color: white;
+}
+
+#yellowlight{
+    width:150px;
+    height:150px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#yellowlight:hover{
+    background-color: yellow;
+}
+
+#yellowlight:active{
+    background-color: white;
+}
+
+#greenlight{
+    width:150px;
+    height:150px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#greenlight:hover{
+    background-color: green;
+}
+
+#greenlight:active{
+    background-color: white;
+}

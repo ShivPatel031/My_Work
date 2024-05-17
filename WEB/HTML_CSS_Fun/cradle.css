@@ -1,0 +1,92 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.stand{
+
+    width :500px;
+    height: 20px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    margin-top: 100px;
+    display:flex;
+    justify-content: center;
+    gap:43px;
+    /* position: relative; */
+
+}
+
+.chain{
+    
+    width: 8px;
+    height: 200px;
+    background-color: blueviolet;
+    position : relative;
+}
+
+.chain::after{
+    
+    content:"";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left:-20px;
+    top :170px;
+    background-color: blueviolet;
+    border-radius: 50%;
+
+}
+
+.chain1{
+    animation: leftSwing 2s ease-out infinite;
+    transform-origin: top left;
+}
+
+.chain5{
+    animation: rightSwing 2s ease-out infinite;
+    transform-origin:top right;
+}
+
+@keyframes leftSwing{
+
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 30deg;
+    }
+   
+    50%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:0deg;
+    }
+
+}
+
+@keyframes rightSwing{
+    0%{
+        rotate :0deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    75%{
+        rotate:-30deg;
+    }
+    100%{
+        rotate:0deg;
+    }
+
+}

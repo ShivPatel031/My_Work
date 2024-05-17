@@ -1,0 +1,45 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : 0;
+}
+
+body{
+    width: 100vw;
+    height : 100vh;
+    display : flex;
+    justify-content: center;
+    align-items : center;
+}
+
+.container{
+    width: 50%;
+    height: 400px;
+    /* background-color: aqua; */
+    border-radius: 20px;
+    box-shadow: rgb(50, 49, 49) 0px 7px 29px 0px;
+    background-size: cover;
+
+    animation: gallery 15s linear infinite;
+}
+
+@keyframes gallery{
+    0%{
+        background-image: url("./IMG/1061065.png");
+    }
+    20%{
+        background-image: url("./IMG/1124348.jpg");
+    }
+    40%{
+        background-image: url("./IMG/970460.jpg");
+    }
+    60%{
+        background-image: url("./IMG/746993.jpg");
+    }
+    80%{
+        background-image: url("./IMG/2781366.jpg");
+    }
+    100%{
+        background-image: url("./IMG/837215.png");
+    }
+}

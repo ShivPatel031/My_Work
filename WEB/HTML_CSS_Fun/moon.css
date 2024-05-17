@@ -1,0 +1,97 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.moon{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    translate: -150px -150px;
+    animation: moonRotation 3s linear infinite;
+}
+
+.moon::before{
+    content: "";
+    width: 270px;
+    height: 270px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+
+    
+}
+
+.moon::after{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background-color: blueviolet;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow: blueviolet 0px 0px 20px 20px;
+        top:-20px;
+        left:40%;
+
+    }
+
+
+/* .inner{
+    width:270px;
+    height:270px;
+    background-color: black;
+    border-radius : 50%;
+    position: absolute;
+    animation: moonRotation 3s linear infinite;
+    transform-origin: 150px 150px;
+} */
+
+/* .inner::before{
+    content: "";
+    position: absolute;
+    left:125px;
+    top :-20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    box-shadow: blueviolet 0px 0px 20px 20px;
+} */
+
+@keyframes moonRotation{
+
+  
+
+    100%{
+        rotate: -360deg;
+    
+    }
+    
+    
+}
+
+.moon:hover{
+
+    @keyframes moonRotation{
+
+  
+
+        100%{
+            rotate: 360deg;
+        
+        }
+        
+        
+    }
+}

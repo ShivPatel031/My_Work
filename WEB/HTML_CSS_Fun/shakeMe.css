@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    background-color: rgb(31, 8, 55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 500px;
+    height : 170px;
+    border:10px solid blueviolet;
+    text-align: center;
+    color: blueviolet;
+   
+    font-size: 50px;
+    background-color: rgb(31, 8, 55);
+}
+
+button:hover{
+
+    animation: shake 0.1s linear;
+    color: red;
+    border-color: red;
+}
+
+@keyframes shake {
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 30deg;
+    }
+    50%{
+        rotate:0deg;
+    }
+    75%{
+        rotate:-30deg;
+    }
+    100%{
+        rotate:0deg;
+    }
+}
