@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    width:100vw;
+    height:100vh;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(to right top, #b46bd1, #a879db, #9c86e2, #9292e6, #8a9ce8, #7da8f0, #71b4f5, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+.outer{
+    width: 500px;
+    height:500px;
+    border-radius:50%;
+    background:linear-gradient(rgb(1, 101, 1),rgb(45, 45, 162),rgb(1, 85, 1));
+    position: relative;
+    animation : rotatex 4s linear;
+    rotate : 1deg;
+}
+
+@keyframes rotatex{
+    0%{
+        rotate:-5deg;
+    }
+    100%{
+        rotate: 1deg;
+    }
+}
+
+
+
+
+@keyframes rotateright{
+
+    0%{
+        left:150px;
+        transform :rotateY(-90deg);
+
+    }
+    33%{
+        left:205px;
+        transform :rotateY(-60deg);
+
+    }
+    66%{
+        left : 245px;
+        transform :rotateY(-30deg);
+    } 
+    100%{
+        left:260px;
+        transform :rotateY(0deg);
+    }
+
+}
+
+@keyframes rotateleft{
+
+    0%{
+        left:150px;
+        transform: rotatey(90deg);
+    }
+    25%{
+        transform: rotatey(80deg);
+        left:130px;
+    }
+    50%{   transform: rotatey(70deg);
+        left:110px;
+    }
+    75%{
+        left:93px;
+        transform: rotatey(60deg);
+    } 
+    100%{
+        left:76px;
+        transform: rotateY(50deg);
+    }
+
+} 
+.inner1left{
+    width: 225px;
+    height:480px;
+    border-radius: 0 480px 480px 0;
+    background-color: blanchedalmond;
+    position: absolute;
+    left:260px;
+    top:10px;
+    /* transform :rotateY(0deg); */
+    animation : rotateright 4s linear;
+}
+
+
+
+.inner1right{
+    width: 225px;
+    height:480px;
+    border-radius: 480px 0 0 480px;
+    background-color: rgb(117, 107, 94);
+    position: absolute;
+    left:76px;
+    top:10px; 
+    transform: rotateY(50deg);
+    animation : rotateleft 4s linear;
+}
+
+
+  
+.inner2left{
+    width: 170px;
+    height:340px;
+    border-radius: 0 340px 340px 0;
+    background-color: rgb(173, 202, 30);
+    position: absolute;
+    top:80px;
+}
+
+.inner2right{
+    width: 190px;
+    height:340px;
+    border-radius: 340px 0 0 340px;
+    background-color: rgb(95, 110, 19);
+    position: absolute;
+    left:55px;
+    top:80px; 
+    transform: rotateY(40deg);
+}
+
+.inner3left{
+    width: 85px;
+    height:170px;
+    border-radius: 0 170px 170px 0;
+    background-color: rgb(238, 255, 0);
+    position: absolute;
+    top:80px;
+}
+
+.inner3right{
+    width: 100px;
+    height:170px;
+    border-radius: 170px 0 0 170px;
+    background-color:  rgb(139, 149, 2);
+    position: absolute;
+    left:100px;
+    top:80px; 
+    transform: rotateY(30deg);
+}
