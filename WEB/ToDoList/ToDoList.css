@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    display: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin: 40px;
+}
+.maincontainer{
+    width: 400px;
+    height: 600px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* background-color: brown; */
+}
+
+#userinput{
+    width: 250px;
+    height:35px;
+    border-radius: 10px;
+}
+
+#addaction{
+    width: 70px;
+    height:35px;
+    border-radius: 10px;
+}
+
+.inputcontainer{
+    display:flex;
+    justify-content: space-between;
+    width: 330px;
+    height: 40px;
+}
+
+.addContainerOuter{
+    width:250px;
+}
+
+.ToDoitems{
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    
+    /* background-color: red; */
+    
+}
+button{
+    border-radius: 10px;
+    width:70px;
+    height: 40px;
+}
+li{
+    width: inherit;
+    /* height:40px; */
+}
+p{
+    font-size: 25px;
+}
