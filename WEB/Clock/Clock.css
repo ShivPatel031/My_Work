@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100vw;
+    height:100vh;
+    background-color: rgb(29, 28, 28);
+    display:grid;
+    place-items: center;
+}
+
+.clock{
+    width: 500px;
+    height:200px;
+    background-color: inherit;
+    border: 5px solid yellow;
+    border-radius: 50px;
+    /* box-shadow: 0px 40px 90px -50px yellow; */
+    position:relative;
+    display: grid;
+    place-items: center;
+
+    &::before{
+        content:"";
+        width: 300px;
+        height: 10px;
+        background-color: yellow;
+        position: absolute;
+        top:205px;
+        left:100px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 30px 0px yellow;
+    
+    }
+    
+}
+
+.timeview{
+    color: white;
+    font-size: 70px;
+}
