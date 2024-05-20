@@ -3,9 +3,11 @@
     padding:0;
     box-sizing: border-box;
 }
+
 body{
     display: 100vw;
     height: 100vh;
+
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -15,14 +17,15 @@ body{
 h1{
     margin: 40px;
 }
+
 .maincontainer{
     width: 400px;
     height: 600px;
+
     display:flex;
     flex-direction:column;
     align-items: center;
-    /* justify-content: space-between; */
-    /* background-color: brown; */
+    
 }
 
 #userinput{
@@ -40,6 +43,7 @@ h1{
 .inputcontainer{
     display:flex;
     justify-content: space-between;
+
     width: 330px;
     height: 40px;
 }
@@ -51,20 +55,23 @@ h1{
 .ToDoitems{
     display: flex;
     justify-content: space-between;
+
     width: 200px;
     
-    /* background-color: red; */
-    
 }
+
 button{
+
     border-radius: 10px;
     width:70px;
     height: 40px;
+
 }
+
 li{
-    width: inherit;
-    /* height:40px; */
+    width: inherit;  
 }
+
 p{
     font-size: 25px;
 }
