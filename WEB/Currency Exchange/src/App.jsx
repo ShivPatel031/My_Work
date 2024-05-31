@@ -1,41 +1,70 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import MainComponent from './MainComponent'
-import './APIDATA'
-import currencyinput from './APIDATA';
-
-
+import currencyinput from './api/APIDATA';
 
 function App() {
-  const [fromamount, setFromamount] = useState(0);
-  const [from,setFrom]=useState('inr');
-  const [to,setTo]=useState('usd');
-  const [toamount,setToamount]=useState(0);
 
+  //From side input Amount
+  const [fromAmount, setFromAmount] = useState(100);
+  //From side country selection
+  const [from,setFrom]=useState('inr');
+
+  //To side output amount
+  const [toAmount,setToAmount]=useState(0);
+  //To side country selection
+  const [to,setTo]=useState('usd');
+  
+  //Get data form api
   let data=currencyinput(from);  
 
-  let wordc=Object.keys(data);
+  let countryArray=Object.keys(data);
 
-
-  let changefromamount = (val)=>{
-    setFromamount(val);
+  //To track/change From side amount
+  let changeFromAmount = (val)=>{
+    setFromAmount(val);
   }
 
-  let changetoamount = (val)=>{
-    setToamount(val);
+  //To track/change To side amount
+  let changeToAmount = (val)=>{
+      
+    setToAmount(val);
   }
 
-  let calculatecureency=async()=>{
+  //Calculate currency change
+  let calculateCurrency=()=>{
+      if(data) setToAmount((fromAmount*data[to]).toFixed(4));
+  }
 
-      if(data) setToamount(fromamount*data[to]);
+  useEffect(()=>{
+    calculateCurrency();
+  })
+
+  //To Swap content
+  let swapContent=()=>{
+    let temp=fromAmount;
+    setFromAmount(toAmount);
+    setToAmount(temp);
+
+    temp=from;
+    setFrom(to);
+    setTo(temp);
   }
 
   return (
    <>
     <div className='w-full h-screen bg-cover bg-no-repeat flex justify-center items-center' style={{backgroundImage:`url('https://images.pexels.com/photos/1006060/pexels-photo-1006060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`}}>
-      <MainComponent from={from} to={to} fa={fromamount} ta={toamount}
-        setfa={changefromamount} setta={changetoamount} cb={calculatecureency}
-        wordc={wordc}
-        sf={setFrom} st={setTo}
+      <MainComponent 
+
+        from={from} to={to}
+        setFrom={setFrom} setTo={setTo}
+
+        fromAmount={fromAmount} toAmount={toAmount}
+        changeFromAmount={changeFromAmount} changeToAmount={changeToAmount} 
+
+        calculateCurrency={calculateCurrency}
+        countryArray={countryArray}
+        swapContent={swapContent}
+        
       />
     </div>
    </> 
