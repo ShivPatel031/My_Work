@@ -21,7 +21,6 @@ export default function ToDoItems({val}){
         }
     }
 
-
     let editTodo=()=>{
         setReadonly((readonly)=>!readonly)
     }
@@ -41,7 +40,13 @@ export default function ToDoItems({val}){
                     type="checkbox" 
                     className="ml-2"
                     checked={togal}
-                    onChange={()=>changetogal()}
+                    onChange={()=>{
+                        if(!readonly){
+                            return
+                        }else{
+                            changetogal()
+                        }
+                    }}
                     
                  />
                 <input 
@@ -49,7 +54,7 @@ export default function ToDoItems({val}){
                     readOnly={readonly} 
                     onChange={edit}
                     onKeyDown={keyCheck} 
-                    className={`w-[460px] ml-4 ${togal ?"line-through":"text-black"} text-lg bg-transparent outline-none `}/>
+                    className={`w-[460px] ml-4 ${togal ?"line-through":"text-black"} text-lg rounded-lg border-[1px] ${!readonly?'border-black px-2':' border-transparent'} bg-transparent outline-none`}/>
                 
                 <div className="w-[100px] flex justify-evenly">
                     <button 

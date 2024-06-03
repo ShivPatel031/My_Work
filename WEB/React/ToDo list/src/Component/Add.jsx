@@ -19,12 +19,14 @@ export default function Add(){
     let addInDataArray = ()=>{
         let val={id:uuidv4(),value:text,complete:false}
         setDataArray([...dataArray,val])
+        setText('');
     }
     return(
         <div className="flex">
             <input 
                 type="text" 
                 placeholder="Write Todo..."
+                value={text}
                 onChange={changeText}
                 onKeyDown={keyCheck} 
                 className=" text-white w-[500px] h-[40px] rounded-tl-lg rounded-bl-lg bg-white bg-opacity-20 px-3 outline-none"/>
