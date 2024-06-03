@@ -1,19 +1,16 @@
 
 import { MdEdit } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
-import { useTodoArray } from "../Context/Context";
 import { useState } from "react";
 import { FaSave } from "react-icons/fa";
+import { useDispatch} from "react-redux";
+import {deleteInTodo,updateInTodo} from "../DataAction/crateReducer";
 
 export default function ToDoItems({val}){
     const [editText,setEditText] =  useState(val.value);
     const [togal,setTogal]=useState(false);
     const [readonly,setReadonly]=useState(true)
-    const {setDataArray,dataArray} = useTodoArray();
-
-    let edit=(e)=>{
-        setEditText(e.target.value);
-    }
+    const usedispatch = useDispatch();
 
     let editTodo=()=>{
         setReadonly((readonly)=>!readonly)
@@ -23,20 +20,18 @@ export default function ToDoItems({val}){
         setTogal(!togal)
     }
     
-    let updateme=(id)=>{
-        setDataArray(dataArray.map(element => {  
-            if (element.id == id){
-                element.value = editText;
-                editTodo();
-                return element
-            }else{
-                return element
-            }
-        }))
+    let edit=(e)=>{
+        setEditText(e.target.value);
     }
+
+    let updateme=(id)=>{
+        usedispatch(updateInTodo([id,editText]));
+        editTodo();
+    }
+
     let deleteTodo=(id)=>{
-        setDataArray(dataArray.filter((val)=>val.id != id));
-      }
+        usedispatch(deleteInTodo(id));
+    }
     
     return(   
             <div id={val.id} className={`mt-5 flex w-[560px] h-[40px] ${togal ?"bg-green-200":"bg-slate-200"} items-center rounded-lg`}>
@@ -56,7 +51,7 @@ export default function ToDoItems({val}){
                 <input 
                     value={editText}
                     readOnly={readonly} 
-                    onChange={edit} 
+                    onChange={edit}
                     className={`w-[460px] ml-4 ${togal ?"line-through":"text-black"} text-lg rounded-lg border-[1px] ${!readonly?'border-black px-2':' border-transparent'} bg-transparent outline-none`}/>
                 
                 <div className="w-[100px] flex justify-evenly">
