@@ -16,7 +16,6 @@
 int search(vector<int>& arr, int target) {
 
         int l = 0 , r =arr.size()-1;
-        int n = r;
 
         while (l<=r){
             int m = l + (r-l)/2;
@@ -32,7 +31,7 @@ int search(vector<int>& arr, int target) {
                 }
             }
             else if(arr[m]<arr[l] && arr[m]<arr[r]){
-                if(target <= arr[n] && target >arr[m]){
+                if(target <= arr[r] && target >arr[m]){
                     l=m+1;
                 }else{
                     r=m-1;
