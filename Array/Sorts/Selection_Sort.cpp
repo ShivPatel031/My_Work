@@ -2,6 +2,7 @@
 
 vector<int> Selection_Sort(vector<int> array)
 {
+    bool check = false;
 
     for (int i = 0; i < array.size() - 1; i++)
     {
@@ -12,8 +13,17 @@ vector<int> Selection_Sort(vector<int> array)
                 int temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
+
+                if (i==0 && !check){
+                    check=true;
+                }
             }
         }
+
+        if(check){
+            break;
+        }
+
     }
 
     return array;
