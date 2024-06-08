@@ -2,7 +2,7 @@
 
 vector<int> Selection_Sort(vector<int> array)
 {
-    bool check = false;
+    bool check = true;
 
     for (int i = 0; i < array.size() - 1; i++)
     {
@@ -14,9 +14,7 @@ vector<int> Selection_Sort(vector<int> array)
                 array[i] = array[j];
                 array[j] = temp;
 
-                if (i==0 && !check){
-                    check=true;
-                }
+                check=false;
             }
         }
 
@@ -25,6 +23,5 @@ vector<int> Selection_Sort(vector<int> array)
         }
 
     }
-
     return array;
 }
