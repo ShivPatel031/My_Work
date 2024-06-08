@@ -5,8 +5,9 @@ int search(vector<int>& nums, int target) {
 
        
         while(l<=r){
-            int m = (l + r)/2;
-            cout<<r;
+                
+            int m = l + (r - l)/2;
+                
             if (nums[m] == target){
                 return m;
             }
