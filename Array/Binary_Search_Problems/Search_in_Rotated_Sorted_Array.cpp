@@ -13,7 +13,9 @@
 // Input: nums = [1], target = 0
 // Output: -1
 
-int search(vector<int>& arr, int target) {
+// optimized way
+
+ int search(vector<int>& arr, int target) {
 
         int l = 0 , r =arr.size()-1;
 
@@ -23,29 +25,64 @@ int search(vector<int>& arr, int target) {
             if(arr[m]==target){
                 return m;
             }
-            else if(arr[m]>=arr[l] && arr[m]>arr[r]){
-                if ((arr[m]>target && arr[0]>target) || (target > arr[0] && target > arr[m])){
-                    l=m+1;
-                }else{
+            else if(arr[m]>=arr[0]){
+                if(arr[m]>target && arr[0]<=target){
                     r=m-1;
-                }
-            }
-            else if(arr[m]<arr[l] && arr[m]<arr[r]){
-                if(target <= arr[r] && target >arr[m]){
-                    l=m+1;
                 }else{
-                    r=m-1;
+                    l=m+1;
                 }
-            }
-            else{
-                if(arr[m]<target){
+            }else{
+                if(target <= arr[r] && target > arr[m]){
                     l=m+1;
                 }
                 else{
                     r=m-1;
                 }
             }
+           
         }
         return -1;
         
     }
+
+
+
+
+// How i thought
+
+// int search(vector<int>& arr, int target) {
+
+//         int l = 0 , r =arr.size()-1;
+
+//         while (l<=r){
+//             int m = l + (r-l)/2;
+
+//             if(arr[m]==target){
+//                 return m;
+//             }
+//             else if(arr[m]>=arr[l] && arr[m]>arr[r]){
+//                 if ((arr[m]>target && arr[0]>target) || (target > arr[0] && target > arr[m])){
+//                     l=m+1;
+//                 }else{
+//                     r=m-1;
+//                 }
+//             }
+//             else if(arr[m]<arr[l] && arr[m]<arr[r]){
+//                 if(target <= arr[r] && target >arr[m]){
+//                     l=m+1;
+//                 }else{
+//                     r=m-1;
+//                 }
+//             }
+//             else{
+//                 if(arr[m]<target){
+//                     l=m+1;
+//                 }
+//                 else{
+//                     r=m-1;
+//                 }
+//             }
+//         }
+//         return -1;
+        
+//     }
