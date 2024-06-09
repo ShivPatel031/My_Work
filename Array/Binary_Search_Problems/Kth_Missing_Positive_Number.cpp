@@ -1,5 +1,7 @@
 // Kth Missing Positive Number
 
+//leetcode
+
 // Example 1:
 
 // Input: arr = [2,3,4,7,11], k = 5
@@ -82,3 +84,51 @@
         
 //         return -1;
 //     }
+
+// GFG
+
+// Geek wanted to construct a simple sequence of n integers.
+// Given an increasing sequence a[], we need to find the K-th smallest missing element, taking the first element of the array as starting point in the increasing sequence. If no k-th missing element is there, output -1.
+
+// Example 1:
+
+// Input : arr[ ] = {1, 3, 4, 5, 7} and K = 2
+// Output : 6
+// Explanation:
+// K = 2, We need to find the 2nd missing 
+// number in the array. Missing numbers are 
+// 2 and 6. So 2nd missing number is 6.
+ 
+
+// Example 2:
+
+// Input : arr[ ] = {2, 3, 4, 5, 6, 8} and K = 1
+// Output :  7
+
+int KthMissingElement(int arr[], int n, int k)
+{
+       int start = 0 , end = n - 1 , ans = 0;
+       
+       if(arr[end]-(arr[0]+n) > k){
+       
+       while(start <= end){
+           
+           
+           int mid = start  + (end-start)/2;
+           
+           
+            if ((arr[mid] - (arr[0]+mid)) < k){
+                ans=mid;
+                start = mid + 1;
+                
+            }else{
+                end = mid - 1;
+            }
+       }
+       
+       return arr[ans]+(k-(arr[ans]-(arr[0]+ans)));
+       
+       }
+       
+       return -1;
+}
