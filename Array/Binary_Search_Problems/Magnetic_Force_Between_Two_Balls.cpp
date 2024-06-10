@@ -27,14 +27,24 @@ int maxDistance(vector<int>& stalls, int k) {
         while (start <= end){
             
             int mid = start + (end - start)/2,count=1;
-            int i=0,j=1;
             
-            while(j<=n-1){
-                if(stalls[j]-stalls[i] >= mid){
+          // int i=0,j=1;
+            
+          //   while(j<=n-1){
+          //       if(stalls[j]-stalls[i] >= mid){
+          //           count++;
+          //           i=j;
+          //       }
+          //       j++;
+          //   }
+
+           int pos = stalls[0];
+
+            for (int i=1;i<n;i++){
+                if(pos + mid <= stalls[i]){
                     count++;
-                    i=j;
+                    pos=stalls[i];
                 }
-                j++;
             }
             
             if(count < k){
