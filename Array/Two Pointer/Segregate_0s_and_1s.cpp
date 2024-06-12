@@ -22,22 +22,20 @@ void segregate0and1(int arr[], int n) {
         int start = 0, end = n-1;
         
         while(start<end){
-            if(arr[start]==1  &&  arr[end]==0){
-                int temp=arr[start];
-                arr[start]=arr[end];
-                arr[end]=temp;
-                start++;
-                end--;
-            }
-            else if(arr[start]==1 && arr[end]==1){
-                end--;
-            }
-            else if(arr[start]==0 && arr[end]==0){
+            if(arr[start]==0){
                 start++;
             }
             else{
-                start++;
-                end--;
+                if(arr[end]==0){
+                    int temp=arr[start];
+                    arr[start]=arr[end];
+                    arr[end]=temp;
+                    start++;
+                    end--;
+                }
+                else{
+                    end--;
+                }
             }
         }
         
