@@ -1,4 +1,6 @@
-// Search in a row-column sorted Matrix
+// Search in a row-column sorted Matrix GFG
+// Search a 2D Matrix II leetCode 240
+ 
 
 // Given a matrix of size n x m, where every row and column is sorted in increasing order, and a number x. Find whether element x is present in the matrix or not.
 
@@ -58,3 +60,26 @@ bool search(vector<vector<int> > matrix, int n, int m, int target)
 
         return 0; 
     }
+
+//  more optimize way
+
+// start with top right most corner
+
+bool search(vector<vector<int> > matrix, int n, int m, int target) 
+    {
+        int row=0,column=m-1;
+        
+        while(row<n  &&  column >=0 ){
+            if(matrix[row][column]== target){
+                return 1;
+            }
+            else if(matrix[row][column] > target){
+                    column--;
+            }
+            else{
+                row++;
+            }
+        }
+        
+        return 0; 
+  }
