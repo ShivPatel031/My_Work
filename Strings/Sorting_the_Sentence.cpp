@@ -44,6 +44,7 @@ string sortSentence(string s) {
                     ans +=rem[i]+" ";
                 }else{
                     ans+=rem[i];
+                    break;
                 }
             }
         }
