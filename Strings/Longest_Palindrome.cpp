@@ -46,10 +46,8 @@ int longestPalindrome(string sentence) {
             else 
             {
                 ans += check[i] - 1;
-
-                if (check[i] > odd) 
-                {
-                    odd = check[i];
+                if(odd == 0){
+                  odd++;
                 }
             }
 
@@ -60,15 +58,14 @@ int longestPalindrome(string sentence) {
             else 
             {
                 ans += check2[i] - 1;
-
-                if (check2[i] > odd) 
-                {
-                    odd = check2[i];
+                if(odd == 0){
+                  odd++;
                 }
+              
             }
         }
 
-        if (odd > 0) 
+        if (odd != 0) 
         {
             return ans + 1;
         } 
