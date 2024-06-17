@@ -38,16 +38,17 @@ string sortSentence(string s) {
             }
         }
 
-        for(int i = 0 ; i<rem.size();i++){
+       for(int i = 0 ; i<rem.size();i++){
             if(rem[i]!=""){
-                if(i+1<rem.size() && rem[i+1]!=""){
                     ans +=rem[i]+" ";
-                }else{
-                    ans+=rem[i];
-                    break;
-                }
+            }
+            else
+            {
+                break;
             }
         }
+
+        ans.pop_back();
         
         return ans ;
     }
